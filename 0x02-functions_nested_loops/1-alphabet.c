@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /*
- * print_alphabet  Print_alphabet in lowercase using only `_putchar`
- * Return: 0
+ * print_alphabet -> Print_alphabet in lowercase using only `_putchar`
+ * 
  */
 void print_alphabet(void)
 {
