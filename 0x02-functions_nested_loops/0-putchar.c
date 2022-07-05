@@ -1,22 +1,20 @@
-#include "main.h"
-
+#include "_putchar.h"
 /**
- * main - Entry point
- *
- * Description: A program that prints _putchar and new line
- *
- * Return: returns 0
- **/
+ * main - Print "_putchar" followed by a new line.
+ * Description: You are not allowed to include standard libraries.
+ * Return: 0
+ */
 int main(void)
 {
-	char c[8] = "_putchar";
+	char _putchar[] = "_putchar";
 	int i = 0;
 
-	while (i < 8)
+	while (_putchar[i] != '\0')
 	{
-		_putchar(c[i]);
+		_putchar(_putchar[i]);
 		i++;
 	}
 	_putchar('\n');
+
 	return (0);
 }
