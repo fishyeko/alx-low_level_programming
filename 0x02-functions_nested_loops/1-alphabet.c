@@ -2,7 +2,7 @@
 #include "main.h"
 /*
  * print_alphabet -> Print alphabet in lowercase using only `_putchar`
- * 
+ *
  */
 void print_alphabet(void)
 {
