@@ -1,6 +1,6 @@
 int _putchar(char c);
 /*
-This is void prin_alphabet
+This is void print_alphabet
 */
 void print_alphabet(void);
 /*
