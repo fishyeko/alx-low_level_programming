@@ -15,4 +15,4 @@ void print_alphabet(void)
 	}
 	_putchar('\n');
 }
- a function that prints the alphabet, in lowercase, followed by a new line
+ 
