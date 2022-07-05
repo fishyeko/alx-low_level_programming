@@ -1,10 +1,10 @@
+#include <stdio.h>
 #include "main.h"
-/**
- * print_alphabet - Print alphabet in lowercase using only `_putchar`
- * Return: 0
- **/
-void print_alphabet(void)
-{
+/*
+ * print_alphabet -> Print alphabet in lowercase using only `_putchar`
+ *
+ */
+void print_alphabet(void) {
 	char c = 'a';
 
 	while (c <= 'z')
@@ -13,3 +13,4 @@ void print_alphabet(void)
 		c++;
 	}
 	_putchar('\n');
+}
