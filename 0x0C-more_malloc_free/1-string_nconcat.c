@@ -1,51 +1,54 @@
 #include "main.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * string_nconcat - concatenate 2 strings, only n bytes of s2
- * @s1: string 1
- * @s2: string 2
- * @n: bytes to include of s2
- * Return: NULL if fail, else pointer to malloc memory
- */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
-	char *p;
-	int strlen1, i, c;
-
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	strlen1 = (unsigned int)_strlen(s1);
-	p = malloc((strlen1 + n + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	for (i = 0, c = 0; i < (strlen1 + n); i++)
-	{
-		if (i < strlen1)
-			p[i] = s1[i];
-		else
-			p[i] = s2[c++];
-	}
-	p[i] = '\0';
-
-	return (p);
-}
-
-/**
- * _strlen - find length of string
- * @s: string
- * Return: length of string
- */
-
+ * _strlen - returns the length of the string
+ * @s: input string to count
+ * Description: returns the length of a given string
+ * Return: length of string as int
+ **/
 int _strlen(char *s)
 {
-	int i;
+	unsigned int i;
 
+	if (s == NULL)
+		return (1);
 	for (i = 0; s[i] != '\0'; i++)
 		;
-	return (i);
+	return (i + 1);
+}
+/**
+ * string_nconcat - concatenate n chars of second string to first
+ * @s1: first string
+ * @s2: second string
+ * @n: number of chars to concatenate
+ * Description: concatenate two strings, return NULL if fails
+ * Return: pointer to string, NULL if fails
+ **/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	char *dest;
+	unsigned int size1, size2, i, j;
+
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+	if (n > size2 - 1)
+		n = size2 - 1;
+
+	dest = (char *)malloc((size1 + n) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	if (size1 == 1 && size2 == 1)
+		return (NULL);
+
+	for (i = 0; i < size1 - 1; i++)
+		dest[i] = s1[i];
+
+	for (j = 0; j <= n; j++)
+	{
+		dest[i + j] = s2[j];
+	}
+	dest[i + j] = '\0';
+
+	return (dest);
 }
